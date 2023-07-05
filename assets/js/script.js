@@ -8,10 +8,18 @@ function generatePassword() {
     passwordLength = window.prompt("Invalid entry. Please enter a number between 8 and 128:");
   }
 
-  var lowercase = window.confirm("Would you like to include lowercase letters?");
-  var uppercase = window.confirm("Would you like to include uppercase letters?");
-  var numeric = window.confirm("Would you like to include numeric characters?");
-  var special = window.confirm("Would you like to include special characters?");
+  var includeLowercase = window.confirm("Would you like to include lowercase letters?");
+  var includeUppercase = window.confirm("Would you like to include uppercase letters?");
+  var includeNumeric = window.confirm("Would you like to include numeric characters?");
+  var includeSpecial = window.confirm("Would you like to include special characters?");
+
+  while (!(includeLowercase || includeUppercase || includeNumeric || includeSpecial)) {
+    window.alert("Please select at least one character type.");
+    includeLowercase = window.confirm("Would you like to include lowercase letters?");
+    includeUppercase = window.confirm("Would you like to include uppercase letters?");
+    includeNumeric = window.confirm("Would you like to include numeric characters?");
+    includeSpecial = window.confirm("Would you like to include special characters?");
+  }
 }
 
 
