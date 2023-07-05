@@ -2,13 +2,17 @@
 
 
 function generatePassword() {
-  var passwordLength = window.prompt("How long would you like the password? Enter a number between 8 and 128.");
+  var passwordLength = window.prompt("How long would you like the password? Enter a number between 8 and 128:");
 
-  if (!passwordLength) {
-    return;
+  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    passwordLength = window.prompt("Invalid entry. Please enter a number between 8 and 128:");
   }
-}
 
+  var lowercase = window.confirm("Would you like to include lowercase letters?");
+  var uppercase = window.confirm("Would you like to include uppercase letters?");
+  var numeric = window.confirm("Would you like to include numeric characters?");
+  var special = window.confirm("Would you like to include special characters?");
+}
 
 
 
